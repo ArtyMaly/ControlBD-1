@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <style>
+    * {box-sizing: border-box}<img src="{% static 'logo1.jpeg' %}" alt="Minion">
+
+/* Поля ввода полной ширины */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Установите стиль для всех кнопок */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Дополнительные стили для кнопки "Отмена" */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Поплавок отмена и кнопки регистрации и добавить равную ширину */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Добавить отступы к элементам контейнера */
+.container {
+  padding: 16px;
+}
+
+/* Очистить поплавки */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Измените стили для кнопки отмены и кнопки регистрации на дополнительных маленьких экранах */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+}
+</style>
+    {% comment %} <h1>Добро пожаловать в мой Django проект!</h1> {% endcomment %}
+    <form action="action_page.php" style="border:1px solid #ccc">
+    <img src="{% static 'logo1.jpeg' %}" alt="Minion">
+  <div class="container">
+    <h1>Форма регистрации</h1>
+    <p>Пожалуйста, заполните эту форму, чтобы создать учетную запись.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Введите вашу почту" name="email" required>
+
+    <label for="psw"><b>Пароль</b></label>
+    <input type="password" placeholder="Введите пароль" name="psw" required>
+
+    <label for="psw-repeat"><b>Повторить пароль</b></label>
+    <input type="password" placeholder="Повторите пароль" name="psw-repeat" required>
+
+    <label>
+      <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Запомнить меня
+    </label>
+
+    <p>Создавая учетную запись, вы соглашаетесь с нашим <a href="#" style="color:dodgerblue">Условия и конфиденциальность</a>.</p>
+
+    <div class="clearfix">
+      <button type="button" class="cancelbtn">Отменить</button>
+      <button type="submit" class="signupbtn">Регистрация</button>
+    </div>
+  </div>
+</form> 
+</body>
+</html>
